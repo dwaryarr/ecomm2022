@@ -11,4 +11,7 @@ Untuk Menampilkan Views Dashboard Admin :
 - Login user Admin :
   - email : Admin1@dartgc.com
   - pass : 123
->>>>>>> 61684a230f1624510908ca4bc88aa0c55cd6de59
+
+Update #3 :
+  - Update SideBar Views Admin
+  - Adding Menu Profile & Recovery Password

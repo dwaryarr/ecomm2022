@@ -3,8 +3,6 @@
 Update Minggu5:
 - Authentication Interface (TLE Admin => SB Admin)
 - User Interface Admin Site (Native => SB Admin Template)
-<<<<<<< HEAD
-=======
 
 Untuk Menampilkan Views Dashboard Admin :
 - Import Database ecomm2022.sql -> https://github.com/dwaryarr/ecomm2022

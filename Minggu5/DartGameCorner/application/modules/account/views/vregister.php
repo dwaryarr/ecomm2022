@@ -7,7 +7,8 @@
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
                             <div class="card-header">
                                 <div class="login-logo text-decoration-none">
-                                    <h1><a href="<?= base_url() ?>"><b>Dart</b>GameCorner</a></h1>
+                                    <h1><a href="<?= base_url() ?>"><img src="<?= base_url('assets/images/logo.png') ?>" alt="" width="30" height="24" class="d-inline-block mb-2">
+                                            <b>Dart</b>GameCorner</a></h1>
                                 </div>
                                 <h3 class="text-center font-weight-light my-4">Create Account</h3>
                             </div>

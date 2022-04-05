@@ -3,4 +3,4 @@
 Update Minggu5:
 
 - Authentication Interface (TLE Admin => SB Admin)
-- User Interface Admin & Member Site (Native => SB Admin Template)
+- User Interface Admin Site (Native => SB Admin Template)

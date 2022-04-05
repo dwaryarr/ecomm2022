@@ -48,26 +48,26 @@ class Products extends CI_Controller
         }
     }
 
-    public function hapus($id)
+    public function hapus($id_produk)
     {
-        $this->Products_model->hapusDataProducts($id);
+        $this->Products_model->hapusDataProducts($id_produk);
         $this->session->set_flashdata('flash', 'Dihapus');
         redirect('products');
     }
 
-    public function detail($id)
+    public function detail($id_produk)
     {
         $data['judul'] = 'Detail Data products';
-        $data['products'] = $this->Products_model->getProductsById($id);
+        $data['products'] = $this->Products_model->getProductsById($id_produk);
         $this->load->view('templates/header', $data);
         $this->load->view('products/detail', $data);
         $this->load->view('templates/footer');
     }
 
-    public function ubah($id)
+    public function ubah($id_produk)
     {
         $data['judul'] = 'Form Ubah Data Products';
-        $data['products'] = $this->Products_model->getProductsById($id);
+        $data['products'] = $this->Products_model->getProductsById($id_produk);
         //        $data['genre'] = ['Action', 'Adventure', 'Animation', 'Comedy', 'Drama', 'Horror'];
 
         $this->form_validation->set_rules('gambar', 'Gambar');

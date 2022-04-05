@@ -18,12 +18,12 @@
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                         <a class="small" href="<?= base_url() ?>account/login">Return to login</a>
-                                        <a class="btn btn-primary" href="<?= base_url() ?>account/">Reset Password</a>
+                                        <a class="btn btn-primary" href="<?= base_url() ?>account/recovery">Reset Password</a>
                                     </div>
                                 </form>
                             </div>
                             <div class="card-footer text-center py-3">
-                                <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                <div class="small"><a href="<?= base_url() ?>account/register">Need an account? Sign up!</a></div>
                                 <a href="<?= base_url(); ?>home">Back to Home</a>
                             </div>
                         </div>

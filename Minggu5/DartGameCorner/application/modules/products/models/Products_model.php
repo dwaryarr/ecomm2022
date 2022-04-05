@@ -42,15 +42,14 @@ class Products_model extends CI_model
         $this->db->insert('products', $data);
     }
 
-    public function hapusDataProducts($id)
+    public function hapusDataProducts($id_produk)
     {
-        // $this->db->where('id', $id);
-        $this->db->delete('products', ['id' => $id]);
+        $this->db->delete('products', ['id_produk' => $id_produk]);
     }
 
-    public function getProductsById($id)
+    public function getProductsById($id_produk)
     {
-        return $this->db->get_where('products', ['id' => $id])->row_array();
+        return $this->db->get_where('products', ['id_produk' => $id_produk])->row_array();
     }
 
     public function ubahDataProducts()
@@ -63,7 +62,7 @@ class Products_model extends CI_model
             // "genre" => $this->input->post('genre', true)
         ];
 
-        $this->db->where('id', $this->input->post('id'));
+        $this->db->where('id_produk', $this->input->post('id_produk'));
         $this->db->update('products', $data);
     }
 
@@ -77,12 +76,12 @@ class Products_model extends CI_model
         return $this->db->get('products')->result_array();
     }
 
-    public function getProducts($id = null)
+    public function getProducts($id_produk = null)
     {
-        if ($id === null) {
+        if ($id_produk === null) {
             return $this->db->get('products')->result_array();
         } else {
-            return $this->db->get_where('products', ['id' => $id])->result_array();
+            return $this->db->get_where('products', ['id_produk' => $id_produk])->result_array();
         }
     }
 }

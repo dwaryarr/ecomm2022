@@ -13,6 +13,7 @@ class Products extends CI_Controller
         $this->load->helper(array('form', 'url'));
         $this->load->model('menu/Menu_model');
         $this->simple_login->cek_login();
+        $this->simple_login->cek_akses();
     }
 
     public function index()
@@ -63,16 +64,16 @@ class Products extends CI_Controller
             $this->load->view('templates/user_footer');
         } else {
             $this->Products_model->tambahDataProducts();
-            $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Produk baru ditambahkan!</div>');
-            redirect('products/tambah');
+            $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Produk Baru Ditambahkan!</div>');
+            redirect('products/list');
         }
     }
 
     public function hapus($id_produk)
     {
         $this->Products_model->hapusDataProducts($id_produk);
-        $this->session->set_flashdata('flash', 'Dihapus');
-        redirect('products');
+        $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Produk Dihapus!</div>');
+        redirect('products/list');
     }
 
     public function detail($id_produk)
@@ -84,25 +85,59 @@ class Products extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function ubah($id_produk)
+    public function edit($id_produk)
     {
-        $data['judul'] = 'Edit Data';
+        $nama = $this->session->userdata('name');
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['products'] = $this->db->get_where('products')->row_array();
+        $data['judul'] = 'Edit User Profile';
+        $data['nama'] = $nama;
         $data['products'] = $this->Products_model->getProductsById($id_produk);
-        //        $data['genre'] = ['Action', 'Adventure', 'Animation', 'Comedy', 'Drama', 'Horror'];
+        $data['id_produk'] = $id_produk;
 
-        $this->form_validation->set_rules('gambar', 'Gambar');
-        $this->form_validation->set_rules('nama_products', 'Nama_products', 'required');
+        $this->form_validation->set_rules('nama_produk', 'Nama_produk', 'required');
+        $this->form_validation->set_rules('stok', 'Stok', 'required|numeric');
         $this->form_validation->set_rules('harga', 'Harga', 'required|numeric');
         $this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
+        $this->form_validation->set_rules('kategori', 'Kategori', 'required');
 
         if ($this->form_validation->run() == false) {
-            $this->load->view('templates/header', $data);
-            $this->load->view('products/ubah', $data);
-            $this->load->view('templates/footer');
+            $this->load->view('templates/user_header', $data);
+            $this->load->view('templates/user_sidebar', $data);
+            $this->load->view('products/edit', $data);
+            $this->load->view('templates/user_footer');
         } else {
-            $this->Products_model->ubahDataProducts();
-            $this->session->set_flashdata('flash', 'Diubah');
-            redirect('products');
+            // cek jika ada gambar yang akan diupload
+            $upload_gambar = $_FILES['gambar']['name'];
+            if ($upload_gambar) {
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size']     = '2048';
+                $config['upload_path'] = './assets/images/produk/';
+
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('gambar')) {
+                    $old_gambar = $data['products']['gambar'];
+                    if ($old_gambar != 'default.jpg') {
+                        unlink(FCPATH . 'assets/images/produk/' . $old_gambar);
+                    }
+                    $new_gambar = $this->upload->data('file_name');
+                    $this->db->set('gambar', $new_gambar);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
+
+            $this->db->set('nama_produk', $this->input->post('nama_produk'));
+            $this->db->set('harga', $this->input->post('harga'));
+            $this->db->set('stok', $this->input->post('stok'));
+            $this->db->set('keterangan', $this->input->post('keterangan'));
+            $this->db->set('kategori', $this->input->post('kategori'));
+            $this->db->where('id_produk', $id_produk);
+            $this->db->update('products');
+            $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">
+            Your product has been updated!</div>');
+            redirect('products/list');
         }
     }
 }

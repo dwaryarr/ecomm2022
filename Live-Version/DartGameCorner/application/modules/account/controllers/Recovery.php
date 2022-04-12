@@ -6,7 +6,6 @@ class Recovery extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->simple_login->cek_login();
     }
     //Load Halaman dashboard
     public function index()

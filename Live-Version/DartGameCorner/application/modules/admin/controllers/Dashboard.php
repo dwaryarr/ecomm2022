@@ -9,6 +9,7 @@ class Dashboard extends CI_Controller
         parent::__construct();
         $this->load->model('products/Products_model');
         $this->simple_login->cek_login();
+        $this->simple_login->cek_akses();
     }
 
     public function index()

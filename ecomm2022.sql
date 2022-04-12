@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Apr 2022 pada 10.10
+-- Waktu pembuatan: 12 Apr 2022 pada 12.15
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -137,8 +137,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(1, 'Dwi Arya Ramadhani', 'dwiaryar@dartgc.com', 'default.png', '3906c5555ce71f0213701ac3e501198a', 2, 1, 1648292358),
-(2, 'Admin', 'Admin1@dartgc.com', 'default.png', '202cb962ac59075b964b07152d234b70', 1, 1, 1648292358);
+(1, 'Dwi Arya Ramadhani', 'dwiaryar@dartgc.com', 'default1.png', '3906c5555ce71f0213701ac3e501198a', 2, 1, 1648292358),
+(2, 'Admin1', 'Admin1@dartgc.com', '52.png', '202cb962ac59075b964b07152d234b70', 1, 1, 1648292358);
 
 -- --------------------------------------------------------
 
@@ -230,7 +230,7 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (1, 1, 'Dashboard', 'admin/dashboard', 'fas fa-fw fa-tachometer-alt', 1),
 (2, 2, 'My Profile', 'account/profile', 'fas fa-fw fa-user', 1),
 (3, 2, 'Edit Profile', 'account/edit', 'fas fa-fw fa-user-edit', 1),
-(4, 4, 'User List', 'account/userlist', 'fas fa-fw fa-address-book', 1),
+(4, 1, 'User List', 'account/userlist', 'fas fa-fw fa-address-book', 1),
 (5, 4, 'Recovery Password', 'account/recovery', 'fas fa-fw fa-rotate', 1),
 (6, 5, 'Menu Management', 'menu', 'fas fa-fw fa-folder', 1),
 (7, 5, 'SubMenu Management', 'menu/submenu', 'fas fa-fw fa-folder-open', 1),
@@ -323,13 +323,13 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_access_menu`

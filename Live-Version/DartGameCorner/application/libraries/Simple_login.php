@@ -87,4 +87,30 @@ session berdasar data user daritable user.
         $this->CI->session->set_flashdata('sukses', '<div class="alert alert-success" role="alert">Anda berhasil logout</div>');
         redirect(site_url('account/login'));
     }
+
+    public function cek_akses()
+    {
+        //cek session email
+        if ($this->CI->session->userdata('email') == '') {
+            //set notifikasi
+            $this->CI->session->set_flashdata('sukses', '<div class="alert alert-danger" role="alert">Anda belum login!</div>');
+            //alihkan ke halaman login
+            redirect(site_url('account/login'));
+        } else {
+            $role_id = $this->CI->session->userdata('role_id');
+            $menu = $this->CI->uri->segment(1);
+
+            $queryMenu = $this->CI->db->get_where('user_menu', ['menu' => $menu])->row_array();
+            $menu_id = $queryMenu['id'];
+
+            $userAccess = $this->CI->db->get_where('user_access_menu', [
+                'role_id' => $role_id,
+                'menu_id' => $menu_id
+            ]);
+
+            if ($userAccess->num_rows() < 1) {
+                redirect('account/blocked');
+            }
+        }
+    }
 }

@@ -34,8 +34,8 @@
                                             <td><?= $sm['icon']; ?></td>
                                             <td><?= $sm['is_active']; ?></td>
                                             <td>
-                                                <a href="#" class="badge bg-success">Edit</a>
-                                                <a href="#" class="badge bg-danger">Delete</a>
+                                                <a href="#" class="badge bg-success"><i class="fas fa-pen-to-square"></i> Edit</a>
+                                                <a href="#" class="badge bg-danger"><i class="fas fa-trash-can"></i> Delete</a>
                                             </td>
                                         </tr>
                                         <?php $i++; ?>

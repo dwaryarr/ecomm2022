@@ -4,7 +4,7 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4"><?= $judul ?></h1>
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg">
                             <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
                             <a href="#" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#newMenuModal">Add New Menu</a>
                             <table class="table table-hover">
@@ -22,8 +22,8 @@
                                             <th scope="row"><?= $i; ?></th>
                                             <td><?= $m['menu']; ?></td>
                                             <td>
-                                                <a href="#" class="badge bg-success">Edit</a>
-                                                <a href="#" class="badge bg-danger">Delete</a>
+                                                <a href="#" class="badge bg-success"><i class="fas fa-pen-to-square"></i> Edit</a>
+                                                <a href="#" class="badge bg-danger"><i class="fas fa-trash-can"></i> Delete</a>
                                             </td>
                                         </tr>
                                         <?php $i++; ?>

@@ -3,7 +3,7 @@
            <div class="container">
                <div class="row">
                    <div class="col text-center mt-lg-5">
-                       <p>Created with <i class="fa-solid fa-heart text-danger"></i> by <a href="https://www.instagram.com/aryaramdhni_/" target="_blank" class="text-white fw-bold">Dwi Arya R - <?= date('Y') ?></a></p>
+                       <p>Created with <i class="fa-solid fa-heart text-danger"></i> by <a href="https://www.instagram.com/aryaramdhni_/" target="_blank" class="text-white fw-bold">Dwi Arya R & Rizqi Fajriati - <?= date('Y') ?></a></p>
                    </div>
                </div>
            </div>

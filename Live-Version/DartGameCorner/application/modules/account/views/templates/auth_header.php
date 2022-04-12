@@ -13,4 +13,4 @@
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-primary">
+<body class="bg-light">

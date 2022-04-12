@@ -52,20 +52,6 @@ class Products_model extends CI_model
         return $this->db->get_where('products', ['id_produk' => $id_produk])->row_array();
     }
 
-    public function ubahDataProducts()
-    {
-        $data = [
-            "gambar" => $this->input->post('gambar', true),
-            "nama_produk" => $this->input->post('nama_produk', true),
-            "harga" => $this->input->post('harga', true),
-            "keterangan" => $this->input->post('keterangan', true)
-            // "genre" => $this->input->post('genre', true)
-        ];
-
-        $this->db->where('id_produk', $this->input->post('id_produk'));
-        $this->db->update('products', $data);
-    }
-
     public function cariDataProducts()
     {
         $keyword = $this->input->post('keyword', true);

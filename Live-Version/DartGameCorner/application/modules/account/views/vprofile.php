@@ -10,7 +10,7 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="<?= base_url('assets/images/') . $user['image']; ?>" class="img-fluid rounded-start" alt="Photo Profile" width="200px" height="200px">
+                                    <img src="<?= base_url('assets/images/profile/') . $user['image']; ?>" class="img-fluid rounded-start" alt="Photo Profile" width="200px" height="200px">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
@@ -23,23 +23,6 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-area me-1"></i>
-                                    Area Chart Example
-                                </div>
-                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-bar me-1"></i>
-                                    Bar Chart Example
-                                </div>
-                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>

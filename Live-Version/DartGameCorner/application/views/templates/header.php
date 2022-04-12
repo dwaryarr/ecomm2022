@@ -40,16 +40,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= base_url(); ?>">Home</a>
+                        <a class="nav-link active" aria-current="page" href="<?= base_url(); ?>"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="<?= base_url(); ?>account/login" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-list"></i> Kategori
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Game Online</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url(); ?>account/login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>account/recover-password"><i class="fa-solid fa-rotate"></i> Recover Password</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>account/register"><i class="fa-solid fa-user-plus"></i> Registration</a>
                     </li>
                 </ul>
                 <!-- Toggle DarkMode -->

@@ -4,7 +4,7 @@
             <div class="d-flex align-items-center justify-content-between small">
                 <div class="text-muted">Copyright &copy; DartGameCorner - <?= date('Y') ?></div>
                 <div>
-                    <p>Created with <i class="fa-solid fa-heart text-danger"></i> by <a href="https://www.instagram.com/aryaramdhni_/" target="_blank" class="text-dark fw-bold">Dwi Arya R</a></p>
+                    <p>Created with <i class="fa-solid fa-heart text-danger"></i> by <a href="https://www.instagram.com/aryaramdhni_/" target="_blank" class="text-dark fw-bold">Dwi Arya R & Rizqi Fajriati</a></p>
                 </div>
                 <div>
                     <a href="#">Privacy Policy</a>

@@ -231,7 +231,7 @@ CREATE TABLE `user_sub_menu` (
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`) VALUES
-(1, 1, 'Dashboard', 'admin/dashboard', NULL, 1),
+(1, 1, 'Dashboard', 'admin/dashboard', 'fas fa-fw fa-tachometer-alt', 1),
 (2, 2, 'My Profile', 'account/profile', 'fas fa-fw fa-user', 1),
 (3, 2, 'Edit Profile', 'account/edit', 'fas fa-fw fa-user-edit', 1),
 (4, 1, 'User List', 'account/userlist', 'fas fa-fw fa-address-book', 1),

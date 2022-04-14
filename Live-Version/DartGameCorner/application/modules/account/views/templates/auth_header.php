@@ -11,6 +11,8 @@
     <!-- SBAdmin CSS -->
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/sb_styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	    <!-- Favicon -->
+    <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/logo.png" type="image/x-icon">
 </head>
 
 <body class="bg-light">

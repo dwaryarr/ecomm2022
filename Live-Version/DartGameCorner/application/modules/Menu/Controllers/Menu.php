@@ -34,7 +34,7 @@ class Menu extends CI_Controller
             $this->load->view('templates/user_footer');
         } else {
             $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New menu added!</div>');
+            $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">New menu added!</div>');
             redirect('menu');
         }
     }
@@ -50,8 +50,9 @@ class Menu extends CI_Controller
         $data['subMenu'] = $this->menu->getSubMenu();
         $data['menu'] = $this->db->get('user_menu')->result_array();
 
-        $this->form_validation->set_rules('menu', 'Menu', 'required');
+
         $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('menu_id', 'Menu', 'required');
         $this->form_validation->set_rules('url', 'URL', 'required');
         $this->form_validation->set_rules('icon', 'Icon', 'required');
 
@@ -65,14 +66,51 @@ class Menu extends CI_Controller
         } else {
             $data = [
                 'title' => $this->input->post('title'),
-                'menu_id' => $this->input->post('menu'),
+                'menu_id' => $this->input->post('menu_id'),
                 'url' => $this->input->post('url'),
                 'icon' => $this->input->post('icon'),
                 'is_active' => $this->input->post('is_active')
             ];
             $this->db->insert('user_sub_menu', $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New submenu added!</div>');
+            $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">New SubMenu added!</div>');
             redirect('menu/submenu');
         }
+    }
+
+    public function editMenu($id)
+    {
+        $this->db->set('menu', $this->input->post('menu'));
+        $this->db->where('id', $id);
+        $this->db->update('user_menu');
+    }
+
+    public function editSubMenu($id)
+    {
+        $data['products'] = $this->Menu_model->getSubMenuById($id);
+        $data['id'] = $id;
+        $this->db->set('menu_id', $this->input->post('menu_id'));
+        $this->db->set('title', $this->input->post('title'));
+        $this->db->set('url', $this->input->post('url'));
+        $this->db->set('icon', $this->input->post('icon'));
+        $this->db->set('is_active', $this->input->post('is_active'));
+        $this->db->where('id', $id);
+        $this->db->update('user_sub_menu');
+    }
+
+    public function deleteMenu($id)
+    {
+        $this->load->model('Menu_model', 'menu');
+        $this->menu->deleteMenu($id);
+        $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">Menu deleted!</div>');
+        redirect('menu');
+    }
+
+    public function deleteSubMenu($id)
+    {
+        $id = $this->input->post('id');
+        $this->db->where('id', $id);
+        $this->db->delete('user_sub_menu');
+        $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">SubMenu deleted!</div>');
+        redirect('menu/submenu');
     }
 }

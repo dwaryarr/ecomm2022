@@ -13,17 +13,15 @@ class Menu_model extends CI_Model
         return $this->db->query($query)->result_array();
     }
 
-    public function deleteMenu()
+    public function getProductsById($id)
+    {
+        return $this->db->get_where('user_sub_menu', ['id' => $id])->row_array();
+    }
+
+    public function deleteMenu($id)
     {
         $id = $this->input->post('id');
         $this->db->where('id', $id);
         $this->db->delete('user_menu');
-    }
-
-    public function deleteSubMenu()
-    {
-        $id = $this->input->post('id');
-        $this->db->where('id', $id);
-        $this->db->delete('user_sub_menu');
     }
 }

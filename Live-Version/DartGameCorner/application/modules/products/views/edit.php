@@ -14,7 +14,7 @@
                                 <label class="form-label" for="gambar">Gambar</label>
                             </div>
                             <div class="form-group mb-3">
-                                <img src="<?= base_url('assets/images/') . $products['gambar']; ?>" alt="userimage" width="150px" class="image-thumbnail">
+                                <img src="<?= base_url('assets/images/produk/') . $products['gambar']; ?>" alt="userimage" width="150px" class="image-thumbnail">
                             </div>
                             <div class="form-group mb-3">
                                 <input type="file" class="form-control" id="gambar" name="gambar">

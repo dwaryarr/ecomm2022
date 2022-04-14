@@ -17,7 +17,7 @@ class Products_model extends CI_model
         $gambar = $_FILES['gambar'];
         if ($gambar = '') {
         } else {
-            $config['upload_path'] = './assets/images/';
+            $config['upload_path'] = './assets/images/produk/';
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $this->load->library('upload', $config);
             if (!$this->upload->do_upload('gambar')) {

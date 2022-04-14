@@ -90,7 +90,7 @@ class Products extends CI_Controller
         $nama = $this->session->userdata('name');
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['products'] = $this->db->get_where('products')->row_array();
-        $data['judul'] = 'Edit User Profile';
+        $data['judul'] = 'Edit Produk';
         $data['nama'] = $nama;
         $data['products'] = $this->Products_model->getProductsById($id_produk);
         $data['id_produk'] = $id_produk;

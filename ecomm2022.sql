@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Apr 2022 pada 12.15
+-- Waktu pembuatan: 14 Apr 2022 pada 05.51
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -138,7 +138,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
 (1, 'Dwi Arya Ramadhani', 'dwiaryar@dartgc.com', 'default1.png', '3906c5555ce71f0213701ac3e501198a', 2, 1, 1648292358),
-(2, 'Admin1', 'Admin1@dartgc.com', '52.png', '202cb962ac59075b964b07152d234b70', 1, 1, 1648292358);
+(2, 'Admin1', 'Admin1@dartgc.com', '52.png', '202cb962ac59075b964b07152d234b70', 1, 1, 1648292358),
+(6, 'User2', 'user2@dartgc.com', 'default.png', '202cb962ac59075b964b07152d234b70', 2, 1, 1649819717);
 
 -- --------------------------------------------------------
 
@@ -159,11 +160,12 @@ CREATE TABLE `user_access_menu` (
 INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
-(3, 2, 2),
-(4, 1, 5),
-(5, 1, 6),
-(6, 1, 4),
-(7, 2, 4);
+(3, 1, 3),
+(4, 1, 4),
+(5, 1, 5),
+(6, 1, 6),
+(7, 2, 2),
+(8, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -186,7 +188,9 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 (3, 'Action'),
 (4, 'Setting'),
 (5, 'Menu'),
-(6, 'Produk');
+(6, 'Products'),
+(7, 'test'),
+(8, 'test2');
 
 -- --------------------------------------------------------
 
@@ -227,7 +231,7 @@ CREATE TABLE `user_sub_menu` (
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`) VALUES
-(1, 1, 'Dashboard', 'admin/dashboard', 'fas fa-fw fa-tachometer-alt', 1),
+(1, 1, 'Dashboard', 'admin/dashboard', NULL, 1),
 (2, 2, 'My Profile', 'account/profile', 'fas fa-fw fa-user', 1),
 (3, 2, 'Edit Profile', 'account/edit', 'fas fa-fw fa-user-edit', 1),
 (4, 1, 'User List', 'account/userlist', 'fas fa-fw fa-address-book', 1),
@@ -237,7 +241,8 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (8, 6, 'Tambah Data', 'products/tambah', 'fas fa-fw fa-plus', 1),
 (9, 6, 'Edit Data', 'products/edit', 'fas fa-fw fa-pen-to-square', 0),
 (10, 6, 'List Produk', 'products/list', 'fas fa-fw fa-list', 1),
-(11, 2, '', '', '', 0);
+(11, 2, 'Daftar Produk', 'member/daftarproduk', 'fas fa-fw fa-list', 1),
+(15, 1, 'Test', 'test', 'test', 0);
 
 --
 -- Indexes for dumped tables
@@ -323,25 +328,25 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_role`
@@ -353,7 +358,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

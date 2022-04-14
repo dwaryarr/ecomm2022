@@ -5,7 +5,9 @@
                     <h1 class="mt-4"><?= $judul ?></h1>
                     <div class="row">
                         <div class="col-lg">
-                            <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
+                            <?php if ($this->session->flashdata('flash')) {
+                                echo '<p class="warning" style="margin: 10px 20px;">' . $this->session->flashdata('flash') . '</p>';
+                            } ?>
                             <a href="#" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#newMenuModal">Add New Menu</a>
                             <table class="table table-hover">
                                 <thead>

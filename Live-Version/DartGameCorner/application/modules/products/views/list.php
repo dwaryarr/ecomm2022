@@ -21,10 +21,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $i = 1; ?>
                                     <?php foreach ($products as $p) : ?>
                                         <tr>
-                                            <th scope="row"><?= $i; ?></th>
+                                            <th scope="row"><?= ++$start; ?></th>
                                             <td><img src="<?= base_url('assets/images/produk/') . $p['gambar']; ?>" alt="poster" width="75px"></td>
                                             <td><?= $p['nama_produk']; ?></td>
                                             <td>Rp. <?php echo number_format($p['harga'], 0, ",", "."); ?></td>
@@ -32,16 +31,16 @@
                                             <td><?= $p['keterangan']; ?></td>
                                             <td><?= $p['kategori']; ?></td>
                                             <td>
-                                                <a href="<?= base_url('products/edit/') . $p['id_produk']; ?>" class="badge bg-success"><i class="fas fa-pen-to-square"></i> Edit</a>
+
+                                                <?= anchor('keranjang/shopping/tambah/' . $p['id_produk'], '<div class="badge bg-success"><i class="fa-solid fa-cart-plus"></i> Add to Cart</div>') ?>
+                                                <a href="<?= base_url('products/edit/') . $p['id_produk']; ?>" class="badge bg-primary"><i class="fas fa-pen-to-square"></i> Edit</a>
                                                 <a href="<?= base_url('products/hapus/') . $p['id_produk']; ?>" class="badge bg-danger"><i class="fas fa-trash-can"></i> Delete</a>
                                             </td>
                                         </tr>
-                                        <?php $i++; ?>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
+                            <?= $this->pagination->create_links(); ?>
                         </div>
                     </div>
-                    <!-- <div class="row">
-                    </div> -->
                 </div>

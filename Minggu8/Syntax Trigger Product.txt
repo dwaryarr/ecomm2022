@@ -1,0 +1,49 @@
+<<TRIGGER HAPUS PRODUK>>
+DELIMITER $$
+CREATE TRIGGER `delete_product` AFTER DELETE ON `products` FOR EACH ROW begin
+insert into products_delete
+(id_produk,
+kode_produk,
+nama_produk,
+gambar,
+harga,
+stok,
+keterangan,
+kategori,
+tgl_hapus,
+nama_user
+)
+values
+(old.id_produk,
+old.kode_produk,
+old.nama_produk,
+old.gambar,
+old.harga,
+old.stok,
+old.keterangan,
+old.kategori,
+SYSDATE(),
+current_user
+);
+end
+$$
+DELIMITER ;
+
+<<TRIGGER UPDATE STOK PRODUK(JUAL)>>
+MariaDB [ecomm2022]> create trigger update_stokjual
+    -> after insert on detail_order
+    -> for each row
+    -> begin
+    -> update products
+    -> set stok=stok-new.stok where id_produk=new.id_produk;
+    -> end;//
+
+<<TRIGGER TAMBAH STOK PRODUK>>
+DELIMITER $$
+CREATE TRIGGER `update_tambahstok` AFTER INSERT ON `tambah_stok` FOR EACH ROW begin
+update products set stok=stok+new.stok where id_produk=new.id_produk;
+end
+$$
+DELIMITER ;
+
+

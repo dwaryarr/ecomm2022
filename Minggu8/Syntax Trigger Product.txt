@@ -40,7 +40,7 @@ MariaDB [ecomm2022]> create trigger update_stokjual
     -> end;//
 
 <<UPDATE STOK PRODUCT (TAMBAH STOK)>>
-MariaDB [ecomm2022]> create trigger update_stokjual
+MariaDB [ecomm2022]> create trigger update_tambahstok
     -> after insert on detail_order
     -> for each row
     -> begin

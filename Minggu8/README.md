@@ -7,3 +7,5 @@ Update Minggu8:
   - Trigger Update Stok Produk (Jual/Stok - Stok Terjual = NEW.Stok)
   - Trigger Hapus Produk
 - Penerapan Pagination
+
+~ Live-Demo Project : https://dartgamecorner.000webhostapp.com/

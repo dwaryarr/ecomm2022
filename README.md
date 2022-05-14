@@ -1,5 +1,6 @@
 # Sistem E-Commerce Industri 2022
 ~ Live-Version : File Project Terupdate!
+~ Live-Demo Project : https://dartgamecorner.000webhostapp.com/
 
 - Minggu 1 : Pengantar E-Commerce dan Standar Keamanan
 - Minggu 2 : Struktur dan Design Website E-Commerce.

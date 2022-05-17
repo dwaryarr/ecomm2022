@@ -13,10 +13,9 @@
   - Assignment-4 - Latihan dan Penerapan Views dengan Templates Bootstrap - SBAdmin
 - Minggu 6 : Media Pembayaran + Integrasi
   - Assignment-5 - Dump Database Project dan Rancangan Tabel
-<<<<<<< HEAD
-=======
 - Minggu 7 : UTS
   - url : https://github.com/dwaryarr/ta-uts
 - Minggu 8 : Trigger dan Pagination
   - Assignment-6 - Latihan dan Penerapan Trigger dan Pagination pada Project
->>>>>>> 87eb8ce55da46380bba36524123f699aca5f7b3e
+- Minggu 9 : User Management & Multi User
+  - Assignment-7 - Latihan dan Penerapan Multi User & Hak Akses User

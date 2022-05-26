@@ -19,3 +19,5 @@
   - Assignment-6 - Latihan dan Penerapan Trigger dan Pagination pada Project
 - Minggu 9 : User Management & Multi User
   - Assignment-7 - Latihan dan Penerapan Multi User & Hak Akses User
+- Minggu 10 : Searching Product
+  - Assignment-8 - Latihan dan Penerapan Fitur Searching

@@ -21,3 +21,5 @@
   - Assignment-7 - Latihan dan Penerapan Multi User & Hak Akses User
 - Minggu 10 : Searching Product
   - Assignment-8 - Latihan dan Penerapan Fitur Searching
+- Minggu 11 : Backend Notifikasi + Update Fitur
+  - Assignment-9 - Latihan dan Penerapan Update Fitur

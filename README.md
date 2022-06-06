@@ -23,3 +23,5 @@
   - Assignment-8 - Latihan dan Penerapan Fitur Searching
 - Minggu 11 : Backend Notifikasi + Update Fitur
   - Assignment-9 - Latihan dan Penerapan Update Fitur
+- Minggu 12 : Alert & Notifikasi
+  - Assignment-10 - Latihan dan Penarapan Notifikasi dan Update Fitur

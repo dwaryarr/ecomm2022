@@ -24,7 +24,7 @@
                                             <th scope="row"><?= ++$start; ?></th>
                                             <td><?= $r['role']; ?></td>
                                             <td>
-                                                <a href="<?= base_url('admin/role/roleaccess/' . $r['id']) ?>" class="badge bg-warning"><i class="fas fa-bars"></i> Access</a>
+                                                <a href="<?= base_url('admin/roleaccess/roleaccessmenu/' . $r['id']) ?>" class="badge bg-warning"><i class="fas fa-bars"></i> Access</a>
                                                 <a href="#" class="badge bg-success" data-bs-toggle="modal" data-bs-target="#editMenuModal<?= $r['id'] ?>"><i class="fas fa-pen-to-square"></i> Edit</a>
                                                 <!-- Edit Role Modal -->
                                                 <div class="modal fade" id="editMenuModal<?= $r['id'] ?>" tabindex="-1" aria-labelledby="editMenuModalLabel" aria-hidden="true">
@@ -34,7 +34,7 @@
                                                                 <h5 class="modal-title" id="editMenuModalLabel">Edit Role</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
-                                                            <form action="<?= base_url('admin/role/editrole/' . $r['id']) ?>" method="POST">
+                                                            <form action="<?= base_url('admin/roleaccess/editrole/' . $r['id']) ?>" method="POST">
                                                                 <div class="modal-body">
                                                                     <div class="input-group">
                                                                         <input type="text" class="form-control" placeholder="Role name" id="role" name="role" value="<?= $r['role'] ?>">
@@ -49,7 +49,7 @@
                                                     </div>
                                                 </div>
                         </div>
-                        <a href="<?= base_url('admin/role/deleterole/' . $r['id']) ?>" class="badge bg-danger"><i class="fas fa-trash-can"></i> Delete</a>
+                        <a href="<?= base_url('admin/roleaccess/deleterole/' . $r['id']) ?>" class="badge bg-danger"><i class="fas fa-trash-can"></i> Delete</a>
                         </td>
                         </tr>
 
@@ -72,7 +72,7 @@
                         <h5 class="modal-title" id="newMenuModalLabel">Add New Role</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="<?= base_url('admin/role') ?>" method="POST">
+                    <form action="<?= base_url('admin/roleaccess') ?>" method="POST">
                         <div class="modal-body">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Role name" id="role" name="role">

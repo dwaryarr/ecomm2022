@@ -19,6 +19,27 @@ class Dashboard extends CI_Controller
         $data['judul'] = 'Dashboard';
         $data['nama'] = $nama;
         $data['products'] = $this->Products_model->getAllProducts();
+        $data['riwayattrx'] = $this->Products_model->getRiwayatTRX();
+
+        if ($this->input->post('keyword')) {
+            $data['products'] = $this->Products_model->cariDataProducts();
+        }
+        $this->load->view('templates/user_header', $data);
+        $this->load->view('templates/user_sidebar');
+        $this->load->view('index', $data);
+        $this->load->view('templates/user_footer');
+    }
+
+    public function detailTrxBaru($id_order)
+    {
+        $nama = $this->session->userdata('name');
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['judul'] = 'Dashboard';
+        $data['nama'] = $nama;
+        $data['products'] = $this->Products_model->getAllProducts();
+        $data['order'] = $this->Products_model->getOrderById($id_order);
+        $data['riwayattrx'] = $this->Products_model->getRiwayatTRX();
+
         if ($this->input->post('keyword')) {
             $data['products'] = $this->Products_model->cariDataProducts();
         }

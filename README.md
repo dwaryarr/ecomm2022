@@ -14,7 +14,7 @@
 - Minggu 6 : Media Pembayaran + Integrasi
   - Assignment-5 - Dump Database Project dan Rancangan Tabel
 - Minggu 7 : UTS
-  - url : https://github.com/dwaryarr/ta-uts
+  - url : https://github.com/dwaryarr/ta-uts-
 - Minggu 8 : Trigger dan Pagination
   - Assignment-6 - Latihan dan Penerapan Trigger dan Pagination pada Project
 - Minggu 9 : User Management & Multi User
@@ -25,3 +25,5 @@
   - Assignment-9 - Latihan dan Penerapan Update Fitur
 - Minggu 12 : Alert & Notifikasi
   - Assignment-10 - Latihan dan Penarapan Alert+Notifikasi dan Update Fitur
+- Minggu 13 : UAS
+  - url : https://github.com/dwaryarr/ta-uts
